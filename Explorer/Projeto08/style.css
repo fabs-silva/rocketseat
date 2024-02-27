@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --base-hue: 195;
+    font-size: 62.5%;
+    font-family: 'Mulish', sans-serif;
+    --color-background: #FFFFFF;
+    --color-text: #202024;
+    --color-main-300: hsl(var(--base-hue), 46%, 40%);
+    --color-main-500: hsl(var(--base-hue), 91%, 25%);
+}
+
+html,body,input {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+#app {
+    display: grid;
+    grid-template-areas: 
+        "header"
+        "main"
+        "aside"
+        "footer";
+    height: 100vh;
+}
+
+header {
+    background-color: var(--color-main-500);
+    grid-area: header;
+    --startY: -100%;
+    animation: move .2s;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    font-weight: 700;
+    padding: 1.6rem 2.8rem;
+}
+
+header form {
+    flex: 1;
+}
+
+.input-wrapper label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1.2rem 1.4rem;
+    background-color: var(--color-main-300);
+    color: var(--color-background);
+    border: 0;
+    border-radius: .6rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.input-wrapper input::placeholder {
+    opacity: 0.56;
+    color: var(--color-background);
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 3.1rem;
+    grid-area: main;
+}
+
+.main-image {
+    --delay: .4s;
+    width: 100%;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.title, .main-article {
+    padding: 0 2.2rem;
+}
+
+h1, h2 {
+    font-size: 2.4rem;
+    line-height: 3.8rem;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.like-buttons {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.like-buttons a:hover img {
+    opacity: 0.9;
+}
+
+.main-article {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.6rem;
+    animation: appear .4s var(--delay) backwards;
+}
+
+aside {
+    margin: 3.4rem 0 4rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    padding: 0 2.2rem;
+    grid-area: aside;
+}
+
+article {
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    animation: appear .4s var(--delay) backwards;
+}
+
+h3 {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+}
+
+article img {
+    width: 15rem;
+    height: 8.4rem;
+    object-fit: cover;
+
+}
+
+article p {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+}
+
+footer {
+    background-color: var(--color-main-300);
+    grid-area: footer;
+    --startY: 100%;
+    animation: move .2s;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-background);
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 2.6rem;
+}
+
+@media (min-width: 1210px){
+
+     #app {
+        grid-template-areas: 
+        "header header"
+        "main aside"
+        "footer footer";
+     }
+
+    .container {
+        padding: 4.4rem 0;
+        width: min(121rem, 100%);
+        margin: 0 auto;
+    }
+
+    main, aside{
+        padding: 4.4rem 0;
+    }
+
+    main {
+        max-width: 80rem;
+        justify-self: end;
+        margin-right: 3.6rem;
+    }
+
+    aside {
+        margin: 0;
+        max-width: 36rem;;
+    }
+}
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity:0;
+        transform: scale(0.7);
+    }
+
+    30% {
+        transform: scale(1.2);
+    }
+}
