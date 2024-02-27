@@ -82,7 +82,7 @@ header form {
     font-weight: 600;
 }
 
-.input-wrapper input:placeholder {
+.input-wrapper input::placeholder {
     opacity: 0.56;
     color: var(--color-base-gray-500);
 }
