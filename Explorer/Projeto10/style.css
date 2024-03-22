@@ -1,0 +1,270 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --base-hue: 242;
+    font-size: 62.5%;
+    --color-background: #FFFFFF;
+    --color-text: #312D64;
+    --color-title: #B52184;
+    --color-main-500: hsl(var(--base-hue), 50%, 38%);
+    --color-main-600: hsl(var(--base-hue), 47%, 35%);
+    --color-main-700: hsl(var(--base-hue), 38%, 28%);
+    --color-main-800: hsl(var(--base-hue), 35%, 25%);
+    --linear-background: linear-gradient(96.21deg, var(--color-main-500) 0%, var(--color-main-700) 99.68%);
+    --linear-background-darker: linear-gradient(96.21deg, var(--color-main-600) 0%, var(--color-main-800) 99.68%);
+}
+
+html, body, input, textarea, button {
+    font-family: 'Mulish', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    font-weight: 600;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2 {
+    font-weight: 800;
+    color: var(--color-title);
+
+}
+
+h1 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+}
+
+section {
+    width: 100%;
+}
+
+.home {
+    height: 68rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 3.2rem;
+}
+
+.home .main-image {
+    max-width: 36.4rem;
+    margin-bottom: 1.7rem;
+}
+
+.home .title {
+    margin-bottom: 3.5rem;
+}
+
+.home p {
+    font-size: 2.0rem;
+    line-height: 2.5rem;
+}
+
+.home .arrow-image {
+    height: 10.5rem;
+}
+
+.items {
+    background-image: var(--linear-background);
+    padding: 5.2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.items .card {
+    background-color: var(--color-background);
+    border-radius: 2rem;
+    padding: 2.7rem;
+    box-shadow: 0 3.5px 13.5px rgba(0, 0, 0, 0.25);
+}
+
+.items img {
+    width: 8rem;
+    margin-bottom: 3rem;
+}
+
+.items h2 {
+    font-size: 3rem;
+    line-height: 3.7rem;
+    margin-bottom: 1rem;
+}
+
+.items p {
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.contact {
+    padding: 7.8rem 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact h2 {
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 4.3rem;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin-bottom: 2.4rem;
+}
+
+.contact-form input, .contact-form textarea {
+    border: 1.5px solid var(--color-text);
+    border-radius: 1.6rem;
+    padding: 1.2rem 1.6rem;
+}
+
+.contact-form input {
+    border: 1.5px solid var(--color-text);
+    border-radius: 1.6rem;
+    padding-left: 4rem;
+}
+
+.contact-form textarea {
+    min-height: 12.6rem;
+}
+
+.contact-form input::placeholder, .contact-form textarea::placeholder{
+    color: var(--color-text);
+    font-size: 1.6rem;
+    line-height: 2rem;
+}
+
+.input-icons input{
+    width: 100%;
+}
+
+.input-icons i {
+    position: absolute;
+    color: var(--color-title);
+}
+
+.icon {
+    padding: 1.2rem 1.5rem;
+}
+
+.contact button {
+    background-image: var(--linear-background);
+    color: var(--color-background);
+    border: none;
+    border-radius: 1.6rem;
+    padding: 1rem 1.6rem;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+}
+
+.contact button:hover  {
+    background-image: var(--linear-background-darker);
+}
+
+.stars {
+    display: none;
+}
+
+footer {
+    background-image: var(--linear-background);
+    padding: 3.2rem 1.6rem;
+}
+
+footer p {
+    color: var(--color-background);
+    font-size: 2rem;
+    line-height: 2.7rem;
+    text-align: center;
+}
+
+@media (min-width: 1210px){
+    h1 {
+        font-size: 5.9rem;
+        line-height: 7.3rem;
+    }
+
+    .home {
+        height: 84rem;
+        flex-direction: row-reverse;
+        align-items: start;
+    }
+
+    .home .main-image {
+        max-width: 72rem;        
+    }
+
+    .home .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 100%;
+    }
+
+    .home .title {
+        margin-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        height: 50%;
+    }
+
+    .home a {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+    
+    .home p {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+
+    .items, .contact {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .items {
+        padding: 6.4rem 11.1rem;
+    }
+
+    .card {
+        width: 36.6rem;
+        height: 44.8rem;
+    }
+
+    .contact {
+        padding: 0;
+    }
+
+    .contact .content {
+        width: 50%;
+        padding: 9.2rem
+    }
+
+    .contact img {
+        width: 64.4rem;
+    }
+
+    .stars {
+        display: block;
+    }
+}
